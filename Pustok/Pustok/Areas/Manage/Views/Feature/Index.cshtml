@@ -1,0 +1,41 @@
+﻿ @model List<Feature>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<div class="d-flex justify-content-between align-items-center container-fluid">
+    <h1>Features</h1>
+    <a class="btn btn-success" asp-action="create" asp-controller="feature">Create Feature</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Desc</th>
+            <th scope="col">Icon</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var fweature in Model)
+        {
+            count++;
+            <tr>
+                <th scope="row">@count</th>
+                <td>@fweature.Name</td>
+                <td>@fweature.Desc</td>
+                <td>@Html.Raw(fweature.Icon)</td>
+                
+                <td>
+                    <a class="btn btn-info me-4 " asp-action="update" asp-controller="feature" asp-route-id="@fweature.Id">Update</a>
+                    <a class="btn btn-danger item-delete" asp-action="delete" asp-controller="feature" asp-route-id="@fweature.Id">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

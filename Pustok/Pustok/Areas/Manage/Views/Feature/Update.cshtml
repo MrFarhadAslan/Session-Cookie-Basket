@@ -1,0 +1,31 @@
+﻿@model Feature
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <form method="post" asp-action="update">
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input class="form-control " asp-for="Name" placeholder="Title1">
+            </div>
+
+            <div class="mb-3 col-md-6">
+                <label asp-for="Icon" class="form-label">Icon</label>
+                <input class="form-control" asp-for="Icon" placeholder="Icon">
+            </div>
+
+
+        </div>
+        <div class="mb-3 col-md-3">
+            <label asp-for="Desc" class="form-label">Description</label>
+            <textarea style="width: 500px" class="form-control" asp-for="Desc" placeholder="Description"> </textarea>
+        </div>
+
+
+        <button type="submit" class="btn btn-block btn-outline-primary">Submit</button>
+
+    </form>
+</div>

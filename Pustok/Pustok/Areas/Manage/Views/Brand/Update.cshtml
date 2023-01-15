@@ -1,0 +1,20 @@
+﻿@model Brand
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="container">
+    <form method="post" asp-action="update">
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label asp-for="Image" class="form-label">Name</label>
+                <input class="form-control " asp-for="Image" placeholder="Title1">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-outline-primary">Submit</button>
+
+    </form>
+</div>
+
+
